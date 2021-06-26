@@ -48,24 +48,24 @@ class PQGMelSpectrogram():
         self.iter      = 0
         
         #====================================================
-        # PyQtGraph 散布図の初期設定
+        ## PyQtGraph の初期設定
         app = QtGui.QApplication([]) 
         win = pg.GraphicsLayoutWidget()
         win.resize(size[0], size[1])
         win.show()
         
-        # ImageItem の設定
+        ## ImageItem の設定
         imageitem = pg.ImageItem(border="k")
-        cmap = pg.colormap.getFromMatplotlib("jet")
+        ]cmap = pg.colormap.getFromMatplotlib("jet")
         bar = pg.ColorBarItem( cmap=cmap )
         bar.setImageItem(imageitem) 
         
-        # ViewBox の設定
+        ## ViewBox の設定
         viewbox = win.addViewBox()
         viewbox.setAspectLocked(lock=True)
         viewbox.addItem(imageitem)
   
-        # 軸 (AxisItem) の設定
+        ## 軸 (AxisItem) の設定
         axis_left = pg.AxisItem(orientation="left")
         n_ygrid = 6
         yticks = {}
@@ -74,13 +74,17 @@ class PQGMelSpectrogram():
             yticks[index] = int(self.melfreqs[index])
         axis_left.setTicks([yticks.items()])
         
-        # PlotItemの設定
+        ## PlotItemの設定
         plotitem = pg.PlotItem(viewBox=viewbox, axisItems={"left":axis_left})
+        # グラフの範囲
         plotitem.setLimits(
             minXRange=0, maxXRange=self.n_frames, 
             minYRange=0, maxYRange=self.n_mels)
+        # アスペクト比固定
         plotitem.setAspectLocked(lock=True)
+        # マウス操作無効
         plotitem.setMouseEnabled(x=False, y=False)
+        # ラベルのセット
         plotitem.setLabels(bottom="Time-frame", 
                            left="Frequency")
         win.addItem(plotitem)
