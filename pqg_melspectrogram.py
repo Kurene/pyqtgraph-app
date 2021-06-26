@@ -56,7 +56,7 @@ class PQGMelSpectrogram():
         
         ## ImageItem の設定
         imageitem = pg.ImageItem(border="k")
-        ]cmap = pg.colormap.getFromMatplotlib("jet")
+        cmap = pg.colormap.getFromMatplotlib("jet")
         bar = pg.ColorBarItem( cmap=cmap )
         bar.setImageItem(imageitem) 
         
