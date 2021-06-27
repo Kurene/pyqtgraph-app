@@ -1,7 +1,7 @@
 # pyqtgraph-app
 PyQtGraph audioapps created by [Kurene](https://twitter.com/_kurene)
 
-[:contents]
+https://www.wizard-notes.com/
 
 # app
 ## PyQtGraph MelsSectrogram
