@@ -9,3 +9,6 @@ https://www.wizard-notes.com/
 
 ## PyQtGraph Pitch-lines
 ![Demo](res/pqg_pitchlines.gif)
+
+## PyQtGraph Spherical K-means
+![Demo](res/pqg_spherical_kmeans.gif)
